@@ -2,7 +2,6 @@
 /*
 CSS Reset received from:
 https://ehtmlu.com/blog/a-simple-css-reset/ */
-
 * {
     margin: 0;
     padding: 0;
@@ -10,12 +9,10 @@ https://ehtmlu.com/blog/a-simple-css-reset/ */
     font-family: inherit;
     box-sizing: border-box;
 }
-  
-  html {
+html {
     font-size: 62.5%;
 }
-
-  /* end of reset source -- I added box-sizing: border-box*/
+/* end of reset source -- I added box-sizing: border-box*/
 body {
     background-image: url(space.jpeg);
     background-size: cover;
@@ -31,6 +28,7 @@ body {
       margin: 5px;
       padding: 10px
   }
+/*would like to change background color to black for better readability but this shows before click*/
 #explanation {
       text-align: center;
       font-size: 18px;
@@ -52,12 +50,9 @@ body {
         border: none;
         background-color: #4f3d5f;
       }
-
 #photo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    /*Want to use relative size to make smaller*/
-    height: 400px;
+    height: 20em 
 }

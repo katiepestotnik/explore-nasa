@@ -15,8 +15,6 @@ function handleAPODEvent(event) {
     $.ajax({
         url: `https://api.nasa.gov/planetary/apod?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
     }).then((data) => {
-        //check data populates
-        //console.log(data)
         apodData = data;
         renderAPOD();    
     },
@@ -34,8 +32,3 @@ function renderAPOD() {
     $section.toggle();
 };
 $apodData.on('click', handleAPODEvent);
-
-
-
-
-
