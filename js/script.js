@@ -36,6 +36,7 @@ $apodData.on('click', handleAPODEvent);
 
 ///New Button for EPIC data
 const $epicData = $('#epic-button');
+const $epicSection =$('#section-one')
 const $epicPhoto = $('#epic-photo');
 const $epicCaption = $('#epic-caption');
 const $epicIdentifier =$('#epic-identifier')
@@ -49,6 +50,8 @@ function handleEPICEvent(event) {
         $epicCaption.text(data[5].caption)
         $epicIdentifier.text(`Identifier #: ${data[5].identifier}. Verifies photo time and date.`)
         $epicTime.text(`Date and time of image capture: ${data[5].date}.`)
+        //toggle function also creates issue with two click after initial load
+        $epicSection.toggle()
     },
         (error) => {
             console.log('There is a problem', error);
