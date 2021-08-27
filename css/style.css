@@ -36,3 +36,10 @@ html {
       font-size: 18px;
   }
 
+  body {
+      background-image: url(style.jpeg);
+      background-size: cover;
+      color: white;
+      
+  }
+
