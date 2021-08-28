@@ -1,3 +1,5 @@
+//Next step: Find an API where the user can search for an image/data if possible add input 
+
 //NASA KEY = 7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL
 //APOD Data
 let apodData;
@@ -30,7 +32,6 @@ function renderAPOD() {
     $copyright.text(`Image produced by: ${apodData.copyright}`);
     $date.text(`Photo taken: ${apodData.date}`);
     $explanation.text(apodData.explanation);
-    //$explanation.css('background-color', 'black')
     $section.toggle();
 };
 ///EPIC data

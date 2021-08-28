@@ -10,14 +10,18 @@
     <title>Space</title>
 </head>
 <body>
-    <!Next Step: make navbar to let user select API data of choice -->
     <h1 id='title'>EXPLORE NASA</h1>
-    <footer>
+    <header>
         <img id='nasa-logo'src="/nasa-logo.jpeg" alt="NASA LOGO">
-    </footer>
+    </header>
+    <div>
+        <p class='instructions'>Click Below</p>
+        <p class='instructions'>The Astrological Picture of the Day (APOD) changes everyday with a new image and caption.</p>
+        <p class='instructions'>Toggle the lunar transit button on and off to see random EPIC images captured from DISCOVR throughout the lunar transit of 2021.</p>
+    </div>
     <div class='container'>
         <div id='apod-div'>
-            <button id='apod-button'>Daily Astrological Picture</button>
+            <button title='Click To Reveal'id='apod-button'>Daily Astrological Picture</button>
             <section id='apod-section'>    
             <h1 class='text-style'id='apod-title'></h1>
             <img class='photo'id='apod-photo' src="">
@@ -27,7 +31,7 @@
             </section>
         </div>
         <div id='epic-div'>
-            <button id='epic-button'>Lunar Transit Images</button>
+            <button title='Toggle on and off to get multiple image views'id='epic-button'>Lunar Transit Images</button>
             <section id='section-one'>
             <h1 class='text-style'id='epic-title'></h1>
             <img class='photo'id='epic-photo' src="">
