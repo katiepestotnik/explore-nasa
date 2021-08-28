@@ -39,17 +39,17 @@ body {
       padding-bottom: 20px;
       margin: 20px;
 }
-#apod-button {
+button {
     background-color: #4f3d5f;
     padding: 10px;
     margin-top: 10px;
     color: #fff
 }
-#apod-button:hover {
+button:hover {
     background-color: #ac99be;
         border: 1px solid #000;
       }
-#apod-button:active {
+button:active {
         box-shadow: 2px 2px 2px 1px #000;
         border: none;
         background-color: #4f3d5f;
@@ -58,5 +58,11 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 20em 
+    height: 30em 
+}
+#epic-photo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30em  
 }
