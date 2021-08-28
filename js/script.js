@@ -41,11 +41,13 @@ const randomEpicDataGenerator = () => {
     return Math.floor(Math.random() * 11)
 };
 const $epicData = $('#epic-button');
-const $epicSection =$('#section-one')
+const $epicSection = $('#section-one');
+const $epicTitle = $('#epic-title');
 const $epicPhoto = $('#epic-photo');
 const $epicCaption = $('#epic-caption');
 const $epicIdentifier = $('#epic-identifier');
 const $epicTime = $('#epic-date');
+
 //EPIC click function with API call
 function handleEPICEvent(event) {
     event.preventDefault();
@@ -61,6 +63,7 @@ function handleEPICEvent(event) {
 };
 //function for EPIC click function to insert data
 function renderEpic() {
+    $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`)
     $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${epicData[randomEpicDataGenerator()].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
     $epicCaption.text(`${epicData[randomEpicDataGenerator()].caption}.`);
     $epicIdentifier.text(`Identifier #: ${epicData[randomEpicDataGenerator()].identifier}`);

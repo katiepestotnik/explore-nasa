@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 @font-face {
-    font-family: 'Space Mission';
-    src: url('/css/SpaceMission-rgyw9.otf') format('opentype');
+    font-family: "Earth Orbiter Deep 3D";
+    src: url('/css/EarthOrbiterDeep3D-R4EV.otf') format('opentype');
 }
 /*Next task
 fix display properties check responsive design*/
@@ -26,7 +26,7 @@ body {
     font-size: 250%;
     font-family: 'Work Sans', sans-serif;
 }
-#apod-title {
+#apod-title, #epic-title {
     text-transform: uppercase;
 }
 .text-style {
@@ -60,28 +60,35 @@ button:active {
     width: 50%;
 }
 
-.container {
+/* .container {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     margin-top: 20px;
 
-}
-#apod-div {
+} */
+/* #apod-div {
     grid-column-start: 1;
     grid-column-end: span 1;
     grid-row-start: 1;
     grid-row-end: span 1;
-}
-#epic-div {
+} */
+/* #epic-div {
     grid-column-start: 2;
     grid-column-end: span 1;
     grid-row-start: 1;
     grid-row-end: span 1;
-}
+} */
 #title{
     text-align: center;
-    font-size: 300%;
-    font-family: 'Space Mission';
+    font-size: 250%;
+    font-family: "Earth Orbiter Deep 3D";
     letter-spacing: 0.1em;
+}
+#nasa-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 60%;
 }
