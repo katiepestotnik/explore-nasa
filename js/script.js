@@ -2,12 +2,12 @@
 //APOD Data
 let apodData;
 const $apodData = $('#apod-button');
-const $photo = $('#photo');
-const $photoTitle = $('#photo-title');
-const $copyright = $('#copyright');
-const $explanation = $('#explanation');
-const $date = $('#date');
-const $section = $('section');
+const $photo = $('#apod-photo');
+const $photoTitle = $('#apod-title');
+const $copyright = $('#apod-copyright');
+const $explanation = $('#apod-explanation');
+const $date = $('#apod-date');
+const $section = $('#apod-section');
 //APOD Click function with API call
 function handleAPODEvent(event) {
     event.preventDefault();
@@ -31,6 +31,7 @@ function renderAPOD() {
     $copyright.text(`Image produced by: ${apodData.copyright}`);
     $date.text(`Photo taken: ${apodData.date}`);
     $explanation.text(apodData.explanation);
+    $explanation.css('background-color', 'black')
     $section.toggle();
 };
 ///EPIC data
@@ -40,7 +41,7 @@ const $epicSection =$('#section-one')
 const $epicPhoto = $('#epic-photo');
 const $epicCaption = $('#epic-caption');
 const $epicIdentifier = $('#epic-identifier');
-const $epicTime = $('#epic-date-time');
+const $epicTime = $('#epic-date');
 //EPIC click function with API call
 function handleEPICEvent(event) {
     event.preventDefault();
@@ -58,13 +59,12 @@ function handleEPICEvent(event) {
 function renderEpic() {
     $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${epicData[5].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
     //console.log(epicData[5].image);
-    $epicCaption.text(epicData[5].caption);
-    $epicIdentifier.text(`Identifier #: ${epicData[5].identifier}. Verifies photo time and date.`);
-    $epicTime.text(`Date and time of image capture: ${epicData[5].date}.`);
+    $epicCaption.text(`${epicData[5].caption}.`);
+    $epicIdentifier.text(`Identifier #: ${epicData[5].identifier}`);
+    $epicTime.text(`Date and time of image capture: ${epicData[5].date}`);
     //toggle function also creates issue with two click after initial load
     $epicSection.toggle();
 };
-
 //All Click Functions
 $apodData.on('click', handleAPODEvent);
 $epicData.on('click', handleEPICEvent);
