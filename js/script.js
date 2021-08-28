@@ -14,7 +14,6 @@ function handleAPODEvent(event) {
     $.ajax({
         url: `https://api.nasa.gov/planetary/apod?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
     }).then((data) => {
-        //console.log(data)
         apodData = data;
         renderAPOD();
         //fix if copyright is undefined
@@ -36,6 +35,11 @@ function renderAPOD() {
 };
 ///EPIC data
 let epicData;
+//Each toggle will randomly pull a different array element to show multiple images and times
+//epicData length was 11 
+const randomEpicDataGenerator = () => {
+    return Math.floor(Math.random() * 11)
+};
 const $epicData = $('#epic-button');
 const $epicSection =$('#section-one')
 const $epicPhoto = $('#epic-photo');
@@ -57,11 +61,10 @@ function handleEPICEvent(event) {
 };
 //function for EPIC click function to insert data
 function renderEpic() {
-    $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${epicData[5].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-    //console.log(epicData[5].image);
-    $epicCaption.text(`${epicData[5].caption}.`);
-    $epicIdentifier.text(`Identifier #: ${epicData[5].identifier}`);
-    $epicTime.text(`Date and time of image capture: ${epicData[5].date}`);
+    $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${epicData[randomEpicDataGenerator()].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
+    $epicCaption.text(`${epicData[randomEpicDataGenerator()].caption}.`);
+    $epicIdentifier.text(`Identifier #: ${epicData[randomEpicDataGenerator()].identifier}`);
+    $epicTime.text(`Date and time of image capture: ${epicData[randomEpicDataGenerator()].date}`);
     //toggle function also creates issue with two click after initial load
     $epicSection.toggle();
 };
