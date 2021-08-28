@@ -30,7 +30,7 @@ function renderAPOD() {
     $copyright.text(`Image produced by: ${apodData.copyright}`);
     $date.text(`Photo taken: ${apodData.date}`);
     $explanation.text(apodData.explanation);
-    $explanation.css('background-color', 'black')
+    //$explanation.css('background-color', 'black')
     $section.toggle();
 };
 ///EPIC data
