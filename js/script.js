@@ -18,7 +18,6 @@ function handleAPODEvent(event) {
     }).then((data) => {
         apodData = data;
         renderAPOD();
-        //fix if copyright is undefined
 //toggle working better with each api data set put into own divs //
     },
         (error) => {
@@ -33,13 +32,17 @@ function renderAPOD() {
     $date.text(`Photo taken: ${apodData.date}`);
     $explanation.text(apodData.explanation);
     $section.toggle();
+    //not all APOD API calls have copyright property; condition fixes undefined result
+    if (apodData.copyright === undefined) {
+        $copyright.hide();
+    };
 };
 ///EPIC data
 let epicData;
 //Each toggle will randomly pull a different array element to show multiple images and times
 //epicData length was 11 
 const randomEpicDataGenerator = () => {
-    return Math.floor(Math.random() * 11)
+    return Math.floor(Math.random() * 11);
 };
 const $epicData = $('#epic-button');
 const $epicSection = $('#section-one');
@@ -64,7 +67,7 @@ function handleEPICEvent(event) {
 };
 //function for EPIC click function to insert data
 function renderEpic() {
-    $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`)
+    $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`);
     $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${epicData[randomEpicDataGenerator()].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
     $epicCaption.text(`${epicData[randomEpicDataGenerator()].caption}.`);
     $epicIdentifier.text(`Identifier #: ${epicData[randomEpicDataGenerator()].identifier}`);
@@ -72,8 +75,7 @@ function renderEpic() {
     //toggle function also creates issue with two click after initial load
     $epicSection.toggle();
 };
-
-
+//had to determine how to grab image without a url property
 //<img style="width:75%;" src="https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20210211004104.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL">
 
 //Curiosity Rover Data
@@ -81,37 +83,36 @@ let roverData;
 const $roverImage = $('#rover-image');
 const $earthDate = $('#earth-date');
 const $martianSol = $('#martian-sol')
+//Is this the best way to grab userInput for my ajax api call?
 const $userInput = $('input[type="text"]')
 
 //Rover click function with API call
 function handleRoverEvent(event) {
     event.preventDefault();
-    // can't put userInput for the date, works fine with 2015-6-3 
+    // can't put userInput for the date, works fine with date=2015-6-3&api_key= 
     $.ajax({
         url: `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${$userInput}&api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
     }).then((data) => {
         roverData = data;
-        console.log(roverData)
+        console.log(roverData);
         renderRover();
         //Clear after submit
-        $userInput.val('')
-        //fix if copyright is undefined
+        $userInput.val('');
 //toggle working better with each api data set put into own divs //
     },
         (error) => {
-            console.log('There is a problem', error);
+            console.log('There is a problem with input event', error);
         });
 };
-
+//function for rover submit function to insert data
+//data not being pulled correctly
 function renderRover() {
     //can't read properties not sure why
-    $roverImage.attr('src', roverData[0].img_src)
-    $earthDate.text(roverData[0].earth_date)
-    $martianSol.text(roverData[0].sol)
+    $roverImage.attr('src', roverData[0].img_src);
+    $earthDate.text(roverData[0].earth_date);
+    $martianSol.text(roverData[0].sol);
 };
-
 //All Click Functions
 $apodData.on('click', handleAPODEvent);
 $epicData.on('click', handleEPICEvent);
-$('form').on('submit', handleRoverEvent)
-
+$('form').on('submit', handleRoverEvent);
