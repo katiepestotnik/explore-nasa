@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 @font-face {
-    font-family: "Earth Orbiter Deep 3D";
+    font-family: "Earth Orbiter Deep 3D", monospace;
     src: url('/css/EarthOrbiterDeep3D-R4EV.otf') format('opentype');
 }
 /*Next task

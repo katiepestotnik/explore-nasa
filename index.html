@@ -15,16 +15,16 @@
         <img id='nasa-logo'src="/nasa-logo.jpeg" alt="NASA LOGO">
     </header>
     <div>
-        <p class='instructions'>Click Below</p>
+        <p class='instructions'>Click Buttons Below</p>
         <p class='instructions'>The Astrological Picture of the Day (APOD) changes everyday with a new image and caption.</p>
         <p class='instructions'>Toggle the lunar transit button on and off to see random EPIC images captured from DISCOVR throughout the lunar transit of 2021.</p>
     </div>
     <div class='container'>
         <div id='apod-div'>
             <button title='Click To Reveal'id='apod-button'>Daily Astrological Picture</button>
-            <section id='apod-section'>    
+            <section style="display: none;"id='apod-section'>    
             <h1 class='text-style'id='apod-title'></h1>
-            <img class='photo'id='apod-photo' src="">
+            <img class='photo'id='apod-photo'src="">
             <p class='text-style'id='apod-copyright'></p>
             <p class='text-style'id='apod-date'></p>
             <article class='text-style'id='apod-explanation'></article>
@@ -32,7 +32,7 @@
         </div>
         <div id='epic-div'>
             <button title='Toggle on and off to get multiple image views'id='epic-button'>Lunar Transit Images</button>
-            <section id='section-one'>
+            <section style="display: none;" id='section-one'>
             <h1 class='text-style'id='epic-title'></h1>
             <img class='photo'id='epic-photo' src="">
             <p class='text-style'id='epic-caption'></p>
@@ -41,7 +41,7 @@
             </section>
         </div>
     </div>
-    <div id='input-div'>
+    <!-- <div id='input-div'>
         <h1>Enter Earth Date as: YYYY-MM-DD</h1>
         <form>
             <input type="text" placeholder="YYYY-MM-DD"/>
@@ -52,7 +52,18 @@
       <p id="earth-date"></p>
       <p>Martian sol</p>
       <p id="martian-sol"></p>
-    </div>
+    </div> -->
+    <main>
+        <h1>Enter Mars rover name of either curiosity or opportunity to view Rover images</h1>
+        <form>
+            <input id="user-input"type="text" placeholder="rover name"/>
+            <input title='Click to Reveal'type="submit" value="Mars Rover Image" />
+          </form>
+        <h3>Rover Image</h3>
+        <img id="rover-image"src="">
+        <p>Rover ID</p>
+        <p id="rover-id"></p>
+    </main>
 </body>
 </html>
 

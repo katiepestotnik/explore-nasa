@@ -78,39 +78,52 @@ function renderEpic() {
 //had to determine how to grab image without a url property
 //<img style="width:75%;" src="https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20210211004104.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL">
 
-//Curiosity Rover Data
+
+
+
+
+
+
+
+//Rover Data
 let roverData;
 const $roverImage = $('#rover-image');
-const $earthDate = $('#earth-date');
-const $martianSol = $('#martian-sol')
+const $roverId = $('#rover-id');
+//const $roverSol = $('#rover-sol');
 //Is this the best way to grab userInput for my ajax api call?
-const $userInput = $('input[type="text"]')
+const $userInput = $('#user-input');
 
 //Rover click function with API call
 function handleRoverEvent(event) {
     event.preventDefault();
-    // can't put userInput for the date, works fine with date=2015-6-3&api_key= 
-    $.ajax({
-        url: `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${$userInput}&api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-    }).then((data) => {
-        roverData = data;
-        console.log(roverData);
-        renderRover();
-        //Clear after submit
-        $userInput.val('');
-//toggle working better with each api data set put into own divs //
-    },
-        (error) => {
-            console.log('There is a problem with input event', error);
-        });
+    if ($userInput.val() === undefined || $userInput.val() === '') {
+        alert('fix input')
+    } else {
+        // can't put userInput for the date, works fine with date=2015-6-3&api_key= 
+        $.ajax({
+            url: `https://api.nasa.gov/mars-photos/api/v1/rovers/${$userInput.val()}/photos?earth_date=2015-6-3&api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
+        }).then((data) => {
+            roverData = data;
+            console.log(roverData);
+            renderRover();
+            //Clear after submit
+            //$userInput.val('');
+            //toggle working better with each api data set put into own divs //
+        },
+            (error) => {
+                if ($userInput === undefined) {
+                    alert('reenter valid input')
+                }
+            });
+    }
 };
 //function for rover submit function to insert data
 //data not being pulled correctly
 function renderRover() {
     //can't read properties not sure why
-    $roverImage.attr('src', roverData[0].img_src);
-    $earthDate.text(roverData[0].earth_date);
-    $martianSol.text(roverData[0].sol);
+    $roverImage.attr('src', roverData.photos[0].img_src);
+    $roverId.text(roverData.photos[0].id);
+    //$roverSol.text(roverData[0].sol);
 };
 //All Click Functions
 $apodData.on('click', handleAPODEvent);
