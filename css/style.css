@@ -96,7 +96,6 @@ button:active {
     text-align: center;
     margin: 20px;
 }
-
 #rover-title {
     text-align: center;
     text-transform: uppercase;
@@ -105,10 +104,7 @@ button:active {
 .rover-style {
     padding-top: 1em;
 }
-#epic-div, #sunset-sol, #apod-div, #rover-div {
-    text-align: center;
-}
-.main-rover-div, #sunset-div, #apod-div, #rover-div {
+#sunset-div, #apod-div, #rover-div, #epic-div {
     margin-bottom: 50px;
     text-align: center;
 }

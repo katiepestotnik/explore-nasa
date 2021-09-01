@@ -16,7 +16,6 @@ function handleAPODEvent(event) {
     }).then((data) => {
         apodData = data;
         renderAPOD();
-//toggle working better with each api data set put into own divs //
     },
         (error) => {
             console.log('There is a problem', error);
@@ -47,7 +46,6 @@ const $epicPhoto = $('#epic-photo');
 const $epicCaption = $('#epic-caption');
 const $epicIdentifier = $('#epic-identifier');
 const $epicTime = $('#epic-date');
-
 //EPIC click function with API call
 function handleEPICEvent(event) {
     event.preventDefault();
@@ -77,10 +75,10 @@ const $roverId = $('#rover-earth-data');
 const $roverName = $('#rover-name');
 const $userInput = $('#user-input');
 const $roverCamera = $('#rover-camera');
-const $roverTitle = $('#rover-title')
-const $roverStyle = $('.rover-style')
-const $hideInfoOpportunity = $('#hide-info-opportunity')
-const $hideInfoCuriosity = $('#hide-indo-curiosity')
+const $roverTitle = $('#rover-title');
+const $roverStyle = $('.rover-style');
+const $hideInfoOpportunity = $('#hide-info-opportunity');
+const $hideInfoCuriosity = $('#hide-indo-curiosity');
 //Produce random photo from rover array 
 const randomRoverDataGenerator = () => {
     return Math.floor(Math.random() * roverData.photos.length);
@@ -99,7 +97,8 @@ function handleRoverEvent(event) {
             console.log(roverData);
             renderRover();
             //Clear after submit
-            $userInput.val('');
+            //After further testing, for user it is easier to keep rover name in field and submit over and over to get different images so I removed clear function.
+            //$userInput.val('');
         },
             (error) => {
                 console.log('There is a problem', error)
@@ -125,7 +124,6 @@ const $sunsetData = $('#sunset-button');
 const $sunsetSection = $('#sunset-section');
 const $sunsetPhoto = $('#sunset-photo');
 const $martianSol = $('#sunset-sol');
-
 //Sunset click function with API call
 function handleSunsetEvent(event) {
     event.preventDefault();
@@ -145,7 +143,6 @@ function renderSunset() {
     $sunsetSection.toggle();
     $martianSol.text(sunsetData.photos[16].sol)
 };
-
 //All Click Functions
 $apodData.on('click', handleAPODEvent);
 $epicData.on('click', handleEPICEvent);
