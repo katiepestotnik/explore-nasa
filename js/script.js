@@ -119,10 +119,37 @@ function renderRover() {
     $roverName.text(roverData.photos[0].rover.name);
     $roverCamera.text(roverData.photos[randomRoverDataGenerator()].camera.full_name);
 };
+///Sunset data
+let sunsetData;
+const $sunsetData = $('#sunset-button');
+const $sunsetSection = $('#sunset-section');
+const $sunsetPhoto = $('#sunset-photo');
+const $martianSol = $('#sunset-sol');
+
+//Sunset click function with API call
+function handleSunsetEvent(event) {
+    event.preventDefault();
+    $.ajax({
+        url: `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-04-15&api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
+    }).then((data) => {
+        sunsetData = data;
+        renderSunset();
+    },
+        (error) => {
+            console.log('There is a problem', error);
+        });
+};
+//function for APOD click function to insert data
+function renderSunset() {
+    $sunsetPhoto.attr('src', sunsetData.photos[16].img_src);
+    $sunsetSection.toggle();
+    $martianSol.text(sunsetData.photos[16].sol)
+};
+
 //All Click Functions
 $apodData.on('click', handleAPODEvent);
 $epicData.on('click', handleEPICEvent);
 $('form').on('submit', handleRoverEvent);
-
+$sunsetData.on('click', handleSunsetEvent);
 //opportunity ended images 6,10,2018
 //4/26/2017 good day with several pic from both rovers

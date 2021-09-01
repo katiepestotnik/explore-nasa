@@ -51,13 +51,22 @@ input {
 }
 button:hover {
     background-color: #ac99be;
-        border: 1px solid #000;
-      }
+    border: 1px solid #000;
+}
+#submit-style:hover{
+    background-color: #ac99be;
+    border: 1px solid #000;
+}
 button:active {
-        box-shadow: 2px 2px 2px 1px #000;
-        border: none;
-        background-color: #4f3d5f;
-      }
+    box-shadow: 2px 2px 2px 1px #000;
+    border: none;
+    background-color: #4f3d5f;
+}
+#submit-style:active {
+    box-shadow: 2px 2px 2px 1px #000;
+    border: none;
+    background-color: #4f3d5f;
+}
 .photo {
     display: block;
     margin-left: auto;
@@ -95,6 +104,9 @@ button:active {
 } 
 .rover-style {
     padding-top: 1em;
+}
+#sunset-div {
+    text-align: center;
 }
 
 
