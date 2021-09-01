@@ -15,8 +15,8 @@
         <img id='nasa-logo'src="/nasa-logo.jpeg" alt="NASA LOGO">
     </header>
     <div>
-        <p class='instructions'>The Astrological Picture of the Day (APOD) changes everyday with a new image and caption.</p>
-        <p class='instructions'>Toggle the lunar transit button on and off to see random EPIC images captured from DISCOVR throughout the lunar transit of Feburary 2021.</p>
+        <!-- <p class='instructions'>The Astrological Picture of the Day (APOD) changes everyday with a new image and caption.</p>
+        <p class='instructions'>Toggle the lunar transit button on and off to see random EPIC images captured from DISCOVR throughout the lunar transit of Feburary 2021.</p> -->
     </div>
     <div class='container'>
         <div id='apod-div'>
@@ -29,27 +29,28 @@
             <article class='text-style'id='apod-explanation'></article>
             </section>
         </div>
-        <div id='epic-div'>
-            <button title='Toggle on and off to get multiple image views'id='epic-button'>Lunar Transit Images</button>
-            <section style="display: none" id='epic-section'>
-            <h1 class='text-style'id='epic-title'></h1>
-            <img class='photo'id='epic-photo' src="">
-            <p class='text-style'id='epic-caption'></p>
-            <p class='text-style'id='epic-identifier'><p>
-            <p class='text-style'id='epic-date'></p>
+        <div id='sunset-div'>
+            <button title='Click to Reveal'id='sunset-button'>Martian Sunset</button>
+            <section style="display: none" id='sunset-section'>
+            <h1>Martian Sol</h1>
+            <p id='sunset-sol'></p>
+            <img class='photo'id='sunset-photo' src="">
             </section>
         </div>
     </div>
-    <div id='sunset-div'>
-        <button title='Click to Reveal'id='sunset-button'>Martian Sunset</button>
-        <section style="display: none" id='sunset-section'>
-        <h1>Martian Sol</h1>
-        <p id='sunset-sol'></p>
-        <img class='photo'id='sunset-photo' src="">
+    <div id='epic-div'>
+        <p class='instructions'>Toggle on and off to see a variety of time snap shots of lunar transit.</p>
+        <button title='Toggle on and off to get multiple image views'id='epic-button'>Lunar Transit Images</button>
+        <section style="display: none" id='epic-section'>
+        <h1 class='text-style'id='epic-title'></h1>
+        <img class='photo'id='epic-photo' src="">
+        <p class='text-style'id='epic-caption'></p>
+        <p class='text-style'id='epic-identifier'><p>
+        <p class='text-style'id='epic-date'></p>
         </section>
     </div>
     <div id='rover-div'>
-        <h1 class='instructions'>Enter Mars rover name of either Curiosity or Opportunity to view random Rover images from various cameras throughout the day of 4/26/2018.</h1>
+        <h1 class='instructions'>Enter Mars rover name of Curiosity or Opportunity to view random images from 4/26/2018.</h1>
 
         <form>
             <input id="user-input"type="text" placeholder="Rover name"/>
@@ -68,4 +69,6 @@
     </div>
 </body>
 </html>
+
+
 

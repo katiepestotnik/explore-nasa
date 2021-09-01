@@ -105,7 +105,11 @@ button:active {
 .rover-style {
     padding-top: 1em;
 }
-#sunset-div {
+#epic-div, #sunset-sol, #apod-div, #rover-div {
+    text-align: center;
+}
+.main-rover-div, #sunset-div, #apod-div, #rover-div {
+    margin-bottom: 50px;
     text-align: center;
 }
 
