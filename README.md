@@ -6,7 +6,7 @@
 - Spirit and Opportunity Images of Mars
 
 
-<img src="NASA-moon-earth.jpeg" alt="drawing" style="width:100%"/>
+<img src="NASA-moon-earth.jpeg" alt="Space" style="width:100%"/>
 
 
 
