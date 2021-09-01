@@ -79,6 +79,8 @@ const $userInput = $('#user-input');
 const $roverCamera = $('#rover-camera');
 const $roverTitle = $('#rover-title')
 const $roverStyle = $('.rover-style')
+const $hideInfoOpportunity = $('#hide-info-opportunity')
+const $hideInfoCuriosity = $('#hide-indo-curiosity')
 //Produce random photo from rover array 
 const randomRoverDataGenerator = () => {
     return Math.floor(Math.random() * roverData.photos.length);
@@ -91,7 +93,7 @@ function handleRoverEvent(event) {
     } else {
         // can't put userInput for the date, works fine with date=2015-6-3&api_key= 
         $.ajax({
-            url: `https://api.nasa.gov/mars-photos/api/v1/rovers/${$userInput.val()}/photos?earth_date=2017-04-26&api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
+            url: `https://api.nasa.gov/mars-photos/api/v1/rovers/${$userInput.val()}/photos?earth_date=2018-04-26&api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
         }).then((data) => {
             roverData = data;
             console.log(roverData);
@@ -111,6 +113,8 @@ function renderRover() {
     $roverName.show();
     $roverCamera.show();
     $roverStyle.show();
+    $hideInfoCuriosity.hide();
+    $hideInfoOpportunity.hide();
     $roverImage.attr('src', roverData.photos[randomRoverDataGenerator()].img_src);
     $roverName.text(roverData.photos[0].rover.name);
     $roverCamera.text(roverData.photos[randomRoverDataGenerator()].camera.full_name);
@@ -120,5 +124,5 @@ $apodData.on('click', handleAPODEvent);
 $epicData.on('click', handleEPICEvent);
 $('form').on('submit', handleRoverEvent);
 
-// curiosity length 40
-// oppo length 34
+//opportunity ended images 6,10,2018
+//4/26/2017 good day with several pic from both rovers
