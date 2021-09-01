@@ -28,6 +28,7 @@ body {
 }
 #apod-title, #epic-title {
     text-transform: uppercase;
+
 }
 .text-style {
       text-align: center;
@@ -36,7 +37,7 @@ body {
       margin: 20px;
       letter-spacing: 0.1em;
 }
-button {
+button, #submit-style {
     background-color: #4f3d5f;
     padding: 10px;
     margin-top: 10px;
@@ -44,6 +45,9 @@ button {
     margin-bottom: 20px;
     width: 15em;
     cursor: pointer;
+}
+input {
+    padding: 10px;
 }
 button:hover {
     background-color: #ac99be;
@@ -83,3 +87,14 @@ button:active {
     text-align: center;
     margin: 20px;
 }
+
+#rover-title {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1em;
+} 
+.rover-style {
+    padding-top: 1em;
+}
+
+
