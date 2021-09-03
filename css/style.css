@@ -83,6 +83,7 @@ button:active {
     font-size: 250%;
     font-family: "Earth Orbiter Deep 3D";
     letter-spacing: 0.1em;
+    margin-top: 1em;
 }
 #nasa-logo, #lunar-transit, #curiosity {
     display: block;
@@ -109,9 +110,11 @@ button:active {
     text-align: center;
 }
 .nav {
-    background-color: #4f3d5f;
+    background-color: #ac99be;
     width: 100%;
     padding: 0.4em;
+    position: fixed;
+    top: 0;
 }
 .ul-container {
     display: flex;
@@ -122,9 +125,6 @@ nav ul {
     list-style: none;
 
 }
-nav li {
-    margin-left: 0.1em;
-}
 nav a {
     text-decoration: none;
     color: #fff;
@@ -132,7 +132,7 @@ nav a {
     font-size: 70%
 }
 nav a:hover {
-    text-decoration: underline;
+    color: #4f3d5f
 }
 
 
