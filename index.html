@@ -10,8 +10,18 @@
     <title>Explore NASA</title>
 </head>
 <body>
-    <h1 id='title'>EXPLORE NASA</h1>
     <header>
+        <div>
+        <nav class='nav'>
+            <ul class='nav-container'>
+                <li><a href='#apod-button'>Picture of the Day</a></li>
+                <li><a href='#sunset-button'>Martian Sunset</a></li>
+                <li><a href='#lunar-transit'>Lunar Transit</a></li>
+                <li><a href='#submit-style'>Mars Rover</a></li>
+            </ul>
+        </nav>
+        </div>
+        <h1 id='title'>EXPLORE NASA</h1>
         <img src='nasa-logo.jpeg'id='nasa-logo'alt="NASA LOGO">
     </header>
     <div class='container'>
@@ -34,6 +44,7 @@
             </section>
         </div>
     </div>
+    <img src="moon-earth.jpeg" id='lunar-transit' alt='transit'>
     <div id='epic-div'>
         <p class='instructions'>Toggle on and off to see a variety of time snap shots of lunar transit.</p>
         <button title='Toggle on and off to get multiple image views'id='epic-button'>Lunar Transit Images</button>
@@ -45,6 +56,7 @@
         <p class='text-style'id='epic-date'></p>
         </section>
     </div>
+    <img src='curiosity-rover.jpeg' alt='Curiosity Rover' id='curiosity'>
     <div id='rover-div'>
         <h1 class='instructions'>View random Mars rover images from 4/26/2018. <p>Each submit will produce a new photo.</p></h1>
         <form>

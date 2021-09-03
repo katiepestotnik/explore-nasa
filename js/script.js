@@ -83,11 +83,8 @@ const $userInput = $('#user-input');
 
 //Rover submit form function with API call
 function handleRoverEvent(event) {
-     event.preventDefault();
-     if ($userInput.val() === undefined || $userInput.val() === '') {
-         alert('Invalid Input: enter either Curiosity or Opportunity');
-     } else {
-         $.ajax({
+    event.preventDefault();
+    $.ajax({
              url: `https://api.nasa.gov/mars-photos/api/v1/rovers/${$userInput.val()}/photos?earth_date=2018-04-26&api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
          }).then((data) => {
             const randomRoverDataGenerator = () => {
@@ -109,12 +106,9 @@ function handleRoverEvent(event) {
              $hideInfoOpportunity.hide();
              const $hideInfoCuriosity = $('#hide-indo-curiosity');
              $hideInfoCuriosity.hide();
-             //After further testing, for user it is easier to keep rover name in field and submit over and over to get different images so I removed clear function.
-             //$userInput.val('');
          },
              (error) => {
                  console.log('There is a problem', error)
                  });
-     };
 };
 $('form').on('submit', handleRoverEvent);
