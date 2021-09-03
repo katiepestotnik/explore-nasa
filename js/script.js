@@ -1,5 +1,3 @@
-//NASA KEY = 7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL
-
 //APOD Click function with API call
 const $apodData = $('#apod-button');
 function handleAPODEvent(event) {
