@@ -104,7 +104,7 @@ function handleRoverEvent(event) {
             $roverStyle.show();
             const $hideInfoOpportunity = $('#hide-info-opportunity');
              $hideInfoOpportunity.hide();
-             const $hideInfoCuriosity = $('#hide-indo-curiosity');
+             const $hideInfoCuriosity = $('#hide-info-curiosity');
              $hideInfoCuriosity.hide();
          },
              (error) => {
