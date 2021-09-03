@@ -1,3 +1,10 @@
+//Nav Bar Home refresh
+const refreshHomeButton = document.querySelector('#refresh');
+const refreshFunction = () => {
+    location.reload();
+};
+refreshHomeButton.addEventListener('click', refreshFunction);
+
 //APOD Click function with API call
 const $apodData = $('#apod-button');
 function handleAPODEvent(event) {
