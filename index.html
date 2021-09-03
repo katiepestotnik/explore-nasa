@@ -46,9 +46,14 @@
         </section>
     </div>
     <div id='rover-div'>
-        <h1 class='instructions'>Enter Mars rover name of Curiosity or Opportunity to view random images from 4/26/2018. <p>Each submit will produce a new photo.</p></h1>
+        <h1 class='instructions'>View random Mars rover images from 4/26/2018. <p>Each submit will produce a new photo.</p></h1>
         <form>
-            <input id="user-input"type="text" placeholder="Rover name"/>
+            <label for='user-input'>Choose Rover:</label>
+                <select id='user-input' name='user-input'>
+                    <option
+                    value='Curiosity'>Curiosity</option>
+                    <option value='Opportunity'>Opportunity</option>
+                </select>
             <input id='submit-style' title='Click to Reveal'type="submit" value="Mars Rover Image" />
         </form>
         <p class='instructions' id='hide-indo-curiosity'>140 Images available for Curiosity. The mission continues for Curiosity.</p>
