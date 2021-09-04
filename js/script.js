@@ -79,6 +79,8 @@ function handleEPICEvent(event) {
         });
 };
 $epicData.on('click', handleEPICEvent);
+//Global $userInput needed for API call
+const $userInput = $('#user-input');
 //Rover submit form function with API call
 function handleRoverEvent(event) {
     event.preventDefault();

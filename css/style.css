@@ -145,7 +145,6 @@ nav a:hover {
     font-size: 70%;
     display: block;
     text-align: center;
-    margin-bottom: 3em;
     color: #ac99be;
 }
 #homepage-link:hover {
@@ -153,4 +152,7 @@ nav a:hover {
 }
 #rover-style {
     color: #db956c;
+}
+footer {
+    margin-bottom: 10%;
 }
