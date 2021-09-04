@@ -4,7 +4,6 @@ const refreshFunction = () => {
     location.reload();
 };
 refreshHomeButton.addEventListener('click', refreshFunction);
-
 //APOD Click function with API call
 const $apodData = $('#apod-button');
 function handleAPODEvent(event) {
@@ -33,7 +32,6 @@ function handleAPODEvent(event) {
             });
 };
 $apodData.on('click', handleAPODEvent);
-
 //Sunset click function with API call
 const $sunsetData = $('#sunset-button');
 function handleSunsetEvent(event) {
@@ -53,7 +51,6 @@ function handleSunsetEvent(event) {
          });
 };
 $sunsetData.on('click', handleSunsetEvent);
-
 //EPIC click function with API call
 const $epicData = $('#epic-button');
 function handleEPICEvent(event) {
@@ -82,10 +79,6 @@ function handleEPICEvent(event) {
         });
 };
 $epicData.on('click', handleEPICEvent);
-
-//Global User input variable to use if input invalid
-const $userInput = $('#user-input');
-
 //Rover submit form function with API call
 function handleRoverEvent(event) {
     event.preventDefault();
