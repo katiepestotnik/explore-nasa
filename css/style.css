@@ -77,7 +77,6 @@ button:active {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-
 } 
 #title{
     text-align: center;
@@ -97,6 +96,8 @@ button:active {
 .instructions {
     text-align: center;
     margin: 20px;
+    color: #e7e2ec;
+
 }
 #rover-title {
     text-align: center;
@@ -146,7 +147,10 @@ nav a:hover {
     color: #ac99be;
 }
 #homepage-link:hover {
-    color: #4f3d5f;
+    color: #db956c;
+}
+#rover-style {
+    color: #db956c;
 }
 footer {
     margin-top: 1em;

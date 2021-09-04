@@ -25,7 +25,7 @@
     </header>
     <div class='container'>
         <div id='apod-div'>
-            <h1>What is NASA's image of the day?</h1>
+            <h1 class='instructions'>What is NASA's image of the day?</h1>
             <button title='Click To Reveal'id='apod-button'>Daily Astrological Picture</button>
             <section style="display: none"id='apod-section'>    
             <h1 class='text-style'id='apod-title'></h1>
@@ -36,7 +36,7 @@
             </section>
         </div>
         <div id='sunset-div'>
-            <h1>What does a sunset look like on Mars?</h1>
+            <h1 class='instructions'>What does a sunset look like on Mars?</h1>
             <button title='Click to Reveal'id='sunset-button'>Martian Sunset</button>
             <section style="display: none" id='sunset-section'>
             <h1>Martian Sol</h1>
@@ -46,7 +46,7 @@
         </div>
         <div id='epic-div'>
             <!-- <img src="moon-earth.jpeg" id='lunar-transit' alt='transit'> -->
-            <p class='instructions'>Toggle on and off for a variety of snap shots.</p>
+            <h1 class='instructions'>Toggle on and off for a variety of snap shots</h1>
             <button title='Toggle on and off to get multiple image views'id='epic-button'>Lunar Transit Images</button>
             <section style="display: none" id='epic-section'>
             <h1 class='text-style'id='epic-title'></h1>
@@ -57,8 +57,7 @@
             </section>
         </div>
         <div id='rover-div'>
-            <!-- <img src='curiosity-rover.jpeg' alt='Curiosity Rover' id='curiosity'> -->
-            <h1 class='instructions'>View random Mars rover images from 4/26/2018. <p>Each submit will produce a new photo.</p></h1>
+            <h1 class='instructions'>View random Mars Images</h1>
             <form>
                 <label for='user-input'>Choose Rover:</label>
                     <select id='user-input' name='user-input'>
@@ -81,7 +80,7 @@
         </div>
         <footer>
             <img src='curiosity-rover.jpeg' alt='Curiosity Rover' id='curiosity'>
-            <p class='instructions'>Curiosity Rover</p>
+            <p id='rover-style'class='instructions'>Curiosity Rover</p>
             <a id='homepage-link'href="https://mars.nasa.gov/msl/home/" target="_blank">Check out Curiosity's homepage here!</a>
         </footer>
     </div>
