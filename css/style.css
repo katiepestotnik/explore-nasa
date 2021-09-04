@@ -37,7 +37,7 @@ body {
       letter-spacing: 0.1em;
 }
 button, #submit-style {
-    background-color: #4f3d5f;
+    background-color: #ac99be;
     padding: 10px;
     margin-top: 10px;
     color: #fff;
@@ -49,11 +49,11 @@ input {
     padding: 10px;
 }
 button:hover {
-    background-color: #ac99be;
+    background-color: #4f3d5f;
     border: 1px solid #000;
 }
 #submit-style:hover{
-    background-color: #ac99be;
+    background-color: #4f3d5f;
     border: 1px solid #000;
 }
 button:active {
@@ -115,7 +115,7 @@ button:active {
     text-align: center;
 }
 .nav {
-    background-color: #ac99be;
+    background-color: #4f3d5f;
     width: 100%;
     padding: 0.4em;
     position: fixed;
@@ -137,7 +137,7 @@ nav a {
     font-size: 60%;
 }
 nav a:hover {
-    color: #4f3d5f
+    color: #daa2b3;
 }
 #homepage-link {
     text-decoration: none;
@@ -145,7 +145,7 @@ nav a:hover {
     font-size: 70%;
     display: block;
     text-align: center;
-    color: #ac99be;
+    color: #e7e2ec;
 }
 #homepage-link:hover {
     color: #db956c;
