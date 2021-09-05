@@ -37,7 +37,7 @@ body {
       letter-spacing: 0.1em;
 }
 button, #submit-style {
-    background-color: #ac99be;
+    background-color: #4f3d5f;
     padding: 10px;
     margin-top: 10px;
     color: #fff;
@@ -49,17 +49,17 @@ input {
     padding: 10px;
 }
 button:hover {
-    background-color: #4f3d5f;
+    background-color: #ac99be;
     border: 1px solid #000;
 }
 #submit-style:hover{
-    background-color: #4f3d5f;
+    background-color: #ac99be;
     border: 1px solid #000;
 }
 button:active {
     box-shadow: 2px 2px 2px 1px #000;
     border: none;
-    background-color: #4f3d5f;
+    background-color:#ac99be;
 }
 #submit-style:active {
     box-shadow: 2px 2px 2px 1px #000;
@@ -115,7 +115,7 @@ button:active {
     text-align: center;
 }
 .nav {
-    background-color: #4f3d5f;
+    background-image:url(http://www.zingerbugimages.com/backgrounds/purple_starry_sky_glitter_background_seamless.gif);
     width: 100%;
     padding: 0.4em;
     position: fixed;
@@ -137,7 +137,7 @@ nav a {
     font-size: 60%;
 }
 nav a:hover {
-    color: #daa2b3;
+    color: #ac99be;
 }
 #homepage-link {
     text-decoration: none;
@@ -156,3 +156,9 @@ nav a:hover {
 footer {
     margin-bottom: 10%;
 }
+/* Set up in case I like it, so far I am leaving it to column for style preference. */
+/* @media only screen and (min-width: 768px){
+    .container {
+        flex-direction: row;
+    }
+} */
