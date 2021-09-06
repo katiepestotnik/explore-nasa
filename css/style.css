@@ -59,12 +59,12 @@ button:hover {
 button:active {
     box-shadow: 2px 2px 2px 1px #000;
     border: none;
-    background-color:#ac99be;
+    background-image:url(http://www.zingerbugimages.com/backgrounds/purple_starry_sky_glitter_background_seamless.gif);
 }
 #submit-style:active {
     box-shadow: 2px 2px 2px 1px #000;
     border: none;
-    background-color: #4f3d5f;
+    background-image:url(http://www.zingerbugimages.com/backgrounds/purple_starry_sky_glitter_background_seamless.gif);
 }
 .photo {
     display: block;

@@ -6,7 +6,7 @@ const refreshFunction = () => {
 refreshHomeButton.addEventListener('click', refreshFunction);
 //APOD Click function with API call
 const $apodData = $('#apod-button');
-function handleAPODEvent(event) {
+const handleAPODEvent= (event)=> {
     event.preventDefault();
     $.ajax({
         url: `https://api.nasa.gov/planetary/apod?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
@@ -32,17 +32,21 @@ function handleAPODEvent(event) {
             });
 };
 $apodData.on('click', handleAPODEvent);
-//Sunset click function with API call
+//Sunset click function with API call 16-25
 const $sunsetData = $('#sunset-button');
-function handleSunsetEvent(event) {
+const handleSunsetEvent = (event) => {
      event.preventDefault();
     $.ajax({
         url: `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-04-15&api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-     }).then((data) => {
+    }).then((data) => {
+        const sliceData = data.photos.slice(16, 25);
+        const randomSunsetDataGenerator = () => {
+            return Math.floor(Math.random() * 9)
+        }
         const $sunsetPhoto = $('#sunset-photo');
-        $sunsetPhoto.attr('src', data.photos[16].img_src);
+        $sunsetPhoto.attr('src', sliceData[randomSunsetDataGenerator()].img_src);
         const $martianSol = $('#sunset-sol');
-        $martianSol.text(data.photos[16].sol);
+        $martianSol.text(sliceData[randomSunsetDataGenerator()].sol);
         const $sunsetSection = $('#sunset-section');
         $sunsetSection.toggle();
     },
@@ -53,7 +57,7 @@ function handleSunsetEvent(event) {
 $sunsetData.on('click', handleSunsetEvent);
 //EPIC click function with API call
 const $epicData = $('#epic-button');
-function handleEPICEvent(event) {
+const handleEPICEvent = (event) => {
     event.preventDefault();
     $.ajax({
         url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
@@ -79,11 +83,10 @@ function handleEPICEvent(event) {
         });
 };
 $epicData.on('click', handleEPICEvent);
-//Global $userInput needed for API call
-const $userInput = $('#user-input');
 //Rover submit form function with API call
-function handleRoverEvent(event) {
+const handleRoverEvent = (event) => {
     event.preventDefault();
+    const $userInput = $('#user-input');
     $.ajax({
              url: `https://api.nasa.gov/mars-photos/api/v1/rovers/${$userInput.val()}/photos?earth_date=2018-04-26&api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
          }).then((data) => {
