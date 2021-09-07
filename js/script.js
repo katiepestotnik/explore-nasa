@@ -73,208 +73,118 @@ const handleEPICEvent1 = (event) => {
         $epicIdentifier.text(`Identifier #: ${data[0].identifier}`);
         const $epicTime = $('#epic-date');
         $epicTime.text(`Date and time of image capture: ${data[0].date}`);
+        const $epicSection = $('#epic-section');
+        $epicSection.show();
         const handleEPICEvent2 = () => {
             $.ajax({
                 url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
             }).then((data) => {
-                const $epicTitle = $('#epic-title');
-                $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`);
-                const $epicPhoto = $('#epic-photo');
                 $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[1].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                const $epicCaption = $('#epic-caption');
                 $epicCaption.text(`${data[1].caption}.`);
-                const $epicIdentifier = $('#epic-identifier');
                 $epicIdentifier.text(`Identifier #: ${data[1].identifier}`);
-                const $epicTime = $('#epic-date');
                 $epicTime.text(`Date and time of image capture: ${data[1].date}`);
-            },
-                 (error) => {
-                     console.log('There is a problem', error);
                 });
         };
+        handleEPICEvent2();
         const handleEPICEvent3 = () => {
-        $.ajax({
-        url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-        }).then((data) => {
-        const $epicTitle = $('#epic-title');
-        $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`);
-        const $epicPhoto = $('#epic-photo');
-        $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[2].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-        const $epicCaption = $('#epic-caption');
-        $epicCaption.text(`${data[2].caption}.`);
-        const $epicIdentifier = $('#epic-identifier');
-        $epicIdentifier.text(`Identifier #: ${data[2].identifier}`);
-        const $epicTime = $('#epic-date');
-        $epicTime.text(`Date and time of image capture: ${data[2].date}`);
-    },
-         (error) => {
-             console.log('There is a problem', error);
-        });
+            $.ajax({
+            url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
+            }).then((data) => {
+                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[2].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
+                $epicCaption.text(`${data[2].caption}.`);
+                $epicIdentifier.text(`Identifier #: ${data[2].identifier}`);
+                $epicTime.text(`Date and time of image capture: ${data[2].date}`);
+                });
         };
+        handleEPICEvent3();
         const handleEPICEvent4 = () => {
             $.ajax({
                 url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
             }).then((data) => {
-                const $epicTitle = $('#epic-title');
-                $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`);
-                const $epicPhoto = $('#epic-photo');
                 $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[3].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                const $epicCaption = $('#epic-caption');
                 $epicCaption.text(`${data[3].caption}.`);
-                const $epicIdentifier = $('#epic-identifier');
                 $epicIdentifier.text(`Identifier #: ${data[3].identifier}`);
-                const $epicTime = $('#epic-date');
                 $epicTime.text(`Date and time of image capture: ${data[3].date}`);
-            },
-                 (error) => {
-                     console.log('There is a problem', error);
                 });
         };
+        handleEPICEvent4();
         const handleEPICEvent5 = () => {
             $.ajax({
                 url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
             }).then((data) => {
-                const $epicTitle = $('#epic-title');
-                $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`);
-                const $epicPhoto = $('#epic-photo');
                 $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[4].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                const $epicCaption = $('#epic-caption');
                 $epicCaption.text(`${data[4].caption}.`);
-                const $epicIdentifier = $('#epic-identifier');
                 $epicIdentifier.text(`Identifier #: ${data[4].identifier}`);
-                const $epicTime = $('#epic-date');
                 $epicTime.text(`Date and time of image capture: ${data[4].date}`);
-            },
-                 (error) => {
-                     console.log('There is a problem', error);
                 });
         };
+        handleEPICEvent5();
         const handleEPICEvent6 = () => {
             $.ajax({
                 url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
             }).then((data) => {
-                const $epicTitle = $('#epic-title');
-                $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`);
-                const $epicPhoto = $('#epic-photo');
                 $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[5].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                const $epicCaption = $('#epic-caption');
                 $epicCaption.text(`${data[5].caption}.`);
-                const $epicIdentifier = $('#epic-identifier');
                 $epicIdentifier.text(`Identifier #: ${data[5].identifier}`);
-                const $epicTime = $('#epic-date');
                 $epicTime.text(`Date and time of image capture: ${data[5].date}`);
-            },
-                 (error) => {
-                     console.log('There is a problem', error);
                 });
         };
+        handleEPICEvent6();
         const handleEPICEvent7 = () => {
             $.ajax({
                 url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
             }).then((data) => {
-                const $epicTitle = $('#epic-title');
-                $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`);
-                const $epicPhoto = $('#epic-photo');
                 $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[6].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                const $epicCaption = $('#epic-caption');
                 $epicCaption.text(`${data[6].caption}.`);
-                const $epicIdentifier = $('#epic-identifier');
                 $epicIdentifier.text(`Identifier #: ${data[6].identifier}`);
-                const $epicTime = $('#epic-date');
                 $epicTime.text(`Date and time of image capture: ${data[6].date}`);
-            },
-                 (error) => {
-                     console.log('There is a problem', error);
                 });
         };
+        handleEPICEvent7();
         const handleEPICEvent8 = () => {
             $.ajax({
                 url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
             }).then((data) => {
-                const $epicTitle = $('#epic-title');
-                $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`);
-                const $epicPhoto = $('#epic-photo');
                 $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[7].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                const $epicCaption = $('#epic-caption');
                 $epicCaption.text(`${data[7].caption}.`);
-                const $epicIdentifier = $('#epic-identifier');
                 $epicIdentifier.text(`Identifier #: ${data[7].identifier}`);
-                const $epicTime = $('#epic-date');
                 $epicTime.text(`Date and time of image capture: ${data[7].date}`);
-            },
-                 (error) => {
-                     console.log('There is a problem', error);
                 });
         };
+        handleEPICEvent8();
         const handleEPICEvent9 = () => {
             $.ajax({
                 url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
             }).then((data) => {
-                const $epicTitle = $('#epic-title');
-                $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`);
-                const $epicPhoto = $('#epic-photo');
                 $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[8].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                const $epicCaption = $('#epic-caption');
                 $epicCaption.text(`${data[8].caption}.`);
-                const $epicIdentifier = $('#epic-identifier');
                 $epicIdentifier.text(`Identifier #: ${data[8].identifier}`);
-                const $epicTime = $('#epic-date');
                 $epicTime.text(`Date and time of image capture: ${data[8].date}`);
-            },
-                 (error) => {
-                     console.log('There is a problem', error);
                 });
         };
+        handleEPICEvent9();
         const handleEPICEvent10 = () => {
             $.ajax({
                 url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
             }).then((data) => {
-                const $epicTitle = $('#epic-title');
-                $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`);
-                const $epicPhoto = $('#epic-photo');
                 $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[9].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                const $epicCaption = $('#epic-caption');
                 $epicCaption.text(`${data[9].caption}.`);
-                const $epicIdentifier = $('#epic-identifier');
                 $epicIdentifier.text(`Identifier #: ${data[9].identifier}`);
-                const $epicTime = $('#epic-date');
                 $epicTime.text(`Date and time of image capture: ${data[9].date}`);
-            },
-                 (error) => {
-                     console.log('There is a problem', error);
                 });
         };
-        const handleEPICEvent11 = (event) => {
+        handleEPICEvent10();
+        const handleEPICEvent11 = () => {
             $.ajax({
                 url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
             }).then((data) => {
-                const $epicTitle = $('#epic-title');
-                $epicTitle.text(`Feburary 11, 2021 Lunar Transit Images`);
-                const $epicPhoto = $('#epic-photo');
                 $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[10].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                const $epicCaption = $('#epic-caption');
                 $epicCaption.text(`${data[10].caption}.`);
-                const $epicIdentifier = $('#epic-identifier');
                 $epicIdentifier.text(`Identifier #: ${data[10].identifier}`);
-                const $epicTime = $('#epic-date');
                 $epicTime.text(`Date and time of image capture: ${data[10].date}`);
-            },
-                 (error) => {
-                     console.log('There is a problem', error);
                 });
         };
-        handleEPICEvent2()
-        handleEPICEvent3();
-        handleEPICEvent4();
-        handleEPICEvent5();
-        handleEPICEvent6();
-        handleEPICEvent7();
-        handleEPICEvent8();
-        handleEPICEvent9();
-        handleEPICEvent10();
         handleEPICEvent11();
-        const $epicSection = $('#epic-section');
-        $epicSection.toggle();
     },
          (error) => {
              console.log('There is a problem', error);
@@ -293,6 +203,7 @@ const handleRoverEvent = (event) => {
             };
             const $roverImage = $('#rover-image');
             $roverImage.attr('src', data.photos[randomRoverDataGenerator()].img_src);
+            $roverImage.show();
             const $roverName = $('#rover-name');
             $roverName.text(data.photos[0].rover.name);
             $roverName.show();
