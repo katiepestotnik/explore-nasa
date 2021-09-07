@@ -56,9 +56,9 @@ const handleSunsetEvent = (event) => {
 };
 $sunsetData.on('click', handleSunsetEvent);
 //EPIC click function with API call
-//Unsure how to DRY this up??
+//Delay with grabbing image over text issue
 const $epicData = $('#epic-button');
-const handleEPICEvent1 = (event) => {
+const handleEPICEvent = (event) => {
     event.preventDefault();
     $.ajax({
         url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
@@ -75,122 +75,22 @@ const handleEPICEvent1 = (event) => {
         $epicTime.text(`Date and time of image capture: ${data[0].date}`);
         const $epicSection = $('#epic-section');
         $epicSection.show();
-        const handleEPICEvent2 = () => {
+        data.forEach((element) => {
             $.ajax({
                 url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
             }).then((data) => {
-                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[1].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                $epicCaption.text(`${data[1].caption}.`);
-                $epicIdentifier.text(`Identifier #: ${data[1].identifier}`);
-                $epicTime.text(`Date and time of image capture: ${data[1].date}`);
-                });
-        };
-        handleEPICEvent2();
-        const handleEPICEvent3 = () => {
-            $.ajax({
-            url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-            }).then((data) => {
-                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[2].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                $epicCaption.text(`${data[2].caption}.`);
-                $epicIdentifier.text(`Identifier #: ${data[2].identifier}`);
-                $epicTime.text(`Date and time of image capture: ${data[2].date}`);
-                });
-        };
-        handleEPICEvent3();
-        const handleEPICEvent4 = () => {
-            $.ajax({
-                url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-            }).then((data) => {
-                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[3].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                $epicCaption.text(`${data[3].caption}.`);
-                $epicIdentifier.text(`Identifier #: ${data[3].identifier}`);
-                $epicTime.text(`Date and time of image capture: ${data[3].date}`);
-                });
-        };
-        handleEPICEvent4();
-        const handleEPICEvent5 = () => {
-            $.ajax({
-                url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-            }).then((data) => {
-                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[4].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                $epicCaption.text(`${data[4].caption}.`);
-                $epicIdentifier.text(`Identifier #: ${data[4].identifier}`);
-                $epicTime.text(`Date and time of image capture: ${data[4].date}`);
-                });
-        };
-        handleEPICEvent5();
-        const handleEPICEvent6 = () => {
-            $.ajax({
-                url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-            }).then((data) => {
-                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[5].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                $epicCaption.text(`${data[5].caption}.`);
-                $epicIdentifier.text(`Identifier #: ${data[5].identifier}`);
-                $epicTime.text(`Date and time of image capture: ${data[5].date}`);
-                });
-        };
-        handleEPICEvent6();
-        const handleEPICEvent7 = () => {
-            $.ajax({
-                url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-            }).then((data) => {
-                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[6].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                $epicCaption.text(`${data[6].caption}.`);
-                $epicIdentifier.text(`Identifier #: ${data[6].identifier}`);
-                $epicTime.text(`Date and time of image capture: ${data[6].date}`);
-                });
-        };
-        handleEPICEvent7();
-        const handleEPICEvent8 = () => {
-            $.ajax({
-                url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-            }).then((data) => {
-                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[7].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                $epicCaption.text(`${data[7].caption}.`);
-                $epicIdentifier.text(`Identifier #: ${data[7].identifier}`);
-                $epicTime.text(`Date and time of image capture: ${data[7].date}`);
-                });
-        };
-        handleEPICEvent8();
-        const handleEPICEvent9 = () => {
-            $.ajax({
-                url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-            }).then((data) => {
-                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[8].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                $epicCaption.text(`${data[8].caption}.`);
-                $epicIdentifier.text(`Identifier #: ${data[8].identifier}`);
-                $epicTime.text(`Date and time of image capture: ${data[8].date}`);
-                });
-        };
-        handleEPICEvent9();
-        const handleEPICEvent10 = () => {
-            $.ajax({
-                url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-            }).then((data) => {
-                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[9].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                $epicCaption.text(`${data[9].caption}.`);
-                $epicIdentifier.text(`Identifier #: ${data[9].identifier}`);
-                $epicTime.text(`Date and time of image capture: ${data[9].date}`);
-                });
-        };
-        handleEPICEvent10();
-        const handleEPICEvent11 = () => {
-            $.ajax({
-                url: `https://api.nasa.gov/EPIC/api/natural/date/2021-02-11?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`
-            }).then((data) => {
-                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${data[10].image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
-                $epicCaption.text(`${data[10].caption}.`);
-                $epicIdentifier.text(`Identifier #: ${data[10].identifier}`);
-                $epicTime.text(`Date and time of image capture: ${data[10].date}`);
-                });
-        };
-        handleEPICEvent11();
-    },
-         (error) => {
-             console.log('There is a problem', error);
-        });
+                $epicPhoto.attr('src', `https://api.nasa.gov/EPIC/archive/natural/2021/02/11/png/${element.image}.png?api_key=7t9znEI8iqcIiSc81GpcDqZ0KlrVfhCSz8PkEOOL`);
+                $epicCaption.text(`${element.caption}.`);
+                $epicIdentifier.text(`Identifier #: ${element.identifier}`);
+                $epicTime.text(`Date and time of image capture: ${element.date}`);
+            })
+        },
+            (error) => {
+                console.log('There is a problem', error);
+            });
+    })
 };
-$epicData.on('click', handleEPICEvent1);
+$epicData.on('click', handleEPICEvent);
 //Rover submit form function with API call
 const handleRoverEvent = (event) => {
     event.preventDefault();
@@ -215,9 +115,9 @@ const handleRoverEvent = (event) => {
             const $roverStyle = $('.rover-style');
             $roverStyle.show();
             const $hideInfoOpportunity = $('#hide-info-opportunity');
-             $hideInfoOpportunity.hide();
-             const $hideInfoCuriosity = $('#hide-info-curiosity');
-             $hideInfoCuriosity.hide();
+            $hideInfoOpportunity.hide();
+            const $hideInfoCuriosity = $('#hide-info-curiosity');
+            $hideInfoCuriosity.hide();
          },
              (error) => {
                  console.log('There is a problem', error)
